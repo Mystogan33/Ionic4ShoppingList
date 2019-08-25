@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Shopping List
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/add-shopping-item']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <ion-list>
+    <ion-list-header color="primary">
+      <ion-label>Items</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of shoppingList$ | async" detail lines="none" (click)="editItem(item)">
+      {{item.name}}
+    </ion-item>
+  </ion-list>
 </ion-content>

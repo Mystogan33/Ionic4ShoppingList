@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
+
+import { EditShoppingItemPage } from './edit-shopping-item.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: EditShoppingItemPage
   }
 ];
 
@@ -20,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [EditShoppingItemPage]
 })
-export class HomePageModule {}
+export class EditShoppingItemPageModule {}
